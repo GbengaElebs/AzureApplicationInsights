@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+</div>
+
+<form>
+    <table style="width: 100%; margin-bottom: 25px">
+        <tr>
+            <td>
+                <button name="button" class="btn btn-primary" value="External Api" asp-controller="Home"
+                    asp-action="CallExternalApi">
+                    Call External Api
+                </button>
+                <div>
+                    <span class="badge bg-secondary">@TempData["ButtonValue"]</span>                  
+                </div>
+            </td>
+            <td>
+                <button name="button" class="btn btn-success" value="odense" asp-controller="Home" asp-action="DataBaseCall">
+                    Call DataBase
+                </button>
+                <div>
+                    <span class="badge bg-info">@TempData["DataBaseButtonValue"]</span>  
+                </div>
+            </td>
+            <td>
+                <button name="button" class="btn btn-danger" value="odense" asp-controller="Home" asp-action="Exception">
+                    Exception Call
+                </button>
+                <div>
+                    <span class="badge bg-danger">@TempData["ExceptionButtonValue"]</span>  
+                </div>
+            </td>
+        </tr>
+    </table>
+
+</form>
